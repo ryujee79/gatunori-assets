@@ -1,0 +1,68 @@
+{
+  "backgrounds": [
+    "board_background.webp",
+    "wood_floor.webp"
+  ],
+  "cards": [
+    "pattern_01.webp",
+    "pattern_02.webp",
+    "pattern_03.webp",
+    "pattern_04.webp",
+    "pattern_05.webp",
+    "special_gold.webp"
+  ],
+  "items": [
+    "baekgu.webp",
+    "fog.webp",
+    "goblin_wind.webp",
+    "pungryu.webp"
+  ],
+  "characters": [
+    "char01_tiger.webp",
+    "char02_rabbit.webp",
+    "char03_fox.webp",
+    "char04_inventor.webp",
+    "char05_heroine.webp",
+    "char06_cat.webp",
+    "char07_panda.webp",
+    "char08_raccoon.webp",
+    "char09_puppy.webp",
+    "char10_squirrel.webp"
+  ],
+  "audio": [
+    "00_아이템_효과음_4종_연속미리듣기.mp3",
+    "01_백구의_길잡이_길이_열린다.mp3",
+    "02_느린_풍류_시간이_느려진다.mp3",
+    "03_안개_시야_봉쇄.mp3",
+    "04_도깨비바람_판이_흔들린다.mp3",
+    "bgm_game_loop.mp3",
+    "bgm_game_loop.wav",
+    "bgm_lobby_loop.mp3",
+    "bgm_lobby_loop.wav",
+    "sfx_click.mp3",
+    "sfx_click.wav",
+    "sfx_correct.mp3",
+    "sfx_correct.wav",
+    "sfx_countdown.mp3",
+    "sfx_countdown.wav",
+    "sfx_doksik.mp3",
+    "sfx_doksik.wav",
+    "sfx_jokbo.mp3",
+    "sfx_jokbo.wav",
+    "sfx_result.mp3",
+    "sfx_result.wav",
+    "sfx_wrong.mp3",
+    "sfx_wrong.wav"
+  ],
+  "mockups": [
+    "01_home_screen.png",
+    "02_waiting_room.png",
+    "03_game_screen.png",
+    "04_zoom_mode.png",
+    "05_result_screen.png",
+    "06_item_baekgu.png",
+    "07_item_pungryu.png",
+    "08_item_fog.png",
+    "09_item_goblin_wind.png"
+  ]
+}
