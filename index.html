@@ -2,53 +2,54 @@
 <html lang="ko">
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>가투놀이 입장</title>
-  <meta http-equiv="refresh" content="0; url=https://script.google.com/macros/s/AKfycby3hymSyJb5pypUnrTuXp7Y7odsbRRuuVsvvb8vz88tqEw5RQuw3RTI_IVj3ZtTa18b/exec">
-  <script>
-    window.location.replace("https://script.google.com/macros/s/AKfycby3hymSyJb5pypUnrTuXp7Y7odsbRRuuVsvvb8vz88tqEw5RQuw3RTI_IVj3ZtTa18b/exec");
-  </script>
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#25a9eb">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-title" content="가투놀이">
+  <title>가투놀이 | 시조로 즐기는 실시간 카드 대결</title>
+  <link rel="manifest" href="./manifest.webmanifest">
+  <link rel="icon" type="image/png" sizes="48x48" href="./icons/favicon-48.png">
+  <link rel="apple-touch-icon" href="./icons/apple-touch-icon.png">
   <style>
-    html, body {
-      height: 100%;
-      margin: 0;
-      font-family: "Noto Sans KR", "Malgun Gothic", sans-serif;
-      background: linear-gradient(180deg, #22a6ea, #d6f1fb 62%, #c9945b);
-      color: #173655;
+    * { box-sizing: border-box; }
+    html, body { margin:0; width:100%; height:100%; height:100dvh; overflow:hidden; background:#25a9eb; }
+    #game {
+      display:block; position:fixed; inset:0; width:100vw; height:100vh; height:100dvh;
+      border:0; background:#25a9eb;
     }
-    main {
-      height: 100%;
-      display: grid;
-      place-items: center;
-      text-align: center;
+    #loading {
+      position:fixed; inset:0; z-index:2; display:grid; place-items:center;
+      background:linear-gradient(180deg,#25a9eb,#c7efff 60%,#c58a4d);
+      font-family:"Noto Sans KR","Malgun Gothic",sans-serif; color:#164b7a;
+      transition:opacity .25s ease;
     }
-    .card {
-      background: #fff5dd;
-      border: 3px solid #ba7d3b;
-      border-radius: 22px;
-      padding: 28px 34px;
-      box-shadow: 0 8px 20px rgba(0,0,0,.18);
-    }
-    h1 { margin: 0 0 12px; color: #09579a; }
-    p { margin: 0 0 18px; font-weight: 700; }
-    a {
-      display: inline-block;
-      padding: 12px 22px;
-      border-radius: 13px;
-      color: #fff;
-      background: #1384d1;
-      text-decoration: none;
-      font-weight: 700;
-    }
+    #loading.hide { opacity:0; pointer-events:none; }
+    #loading img { width:112px; height:112px; border-radius:24px; display:block; margin:0 auto 12px; }
+    #loading b { display:block; text-align:center; font-size:29px; color:#125394; }
+    #loading span { display:block; text-align:center; font-weight:700; margin-top:6px; }
   </style>
 </head>
 <body>
-  <main>
-    <div class="card">
-      <h1>가투놀이</h1>
-      <p>게임 화면으로 이동 중입니다.</p>
-      <a href="https://script.google.com/macros/s/AKfycby3hymSyJb5pypUnrTuXp7Y7odsbRRuuVsvvb8vz88tqEw5RQuw3RTI_IVj3ZtTa18b/exec">이동되지 않으면 여기를 누르세요</a>
+  <div id="loading">
+    <div>
+      <img src="./icons/icon-192.png" alt="가투놀이 아이콘">
+      <b>가투놀이</b>
+      <span>게임 화면을 불러오는 중입니다.</span>
     </div>
-  </main>
+  </div>
+  <iframe id="game"
+    src="https://script.google.com/macros/s/AKfycby3hymSyJb5pypUnrTuXp7Y7odsbRRuuVsvvb8vz88tqEw5RQuw3RTI_IVj3ZtTa18b/exec"
+    title="가투놀이 게임"
+    allow="fullscreen; autoplay; screen-wake-lock"
+    allowfullscreen></iframe>
+  <script>
+    const loading = document.getElementById('loading');
+    document.getElementById('game').addEventListener('load', () => loading.classList.add('hide'));
+    if ('serviceWorker' in navigator) {
+      window.addEventListener('load', () => navigator.serviceWorker.register('./sw.js').catch(() => {}));
+    }
+  </script>
 </body>
 </html>
