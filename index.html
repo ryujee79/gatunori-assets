@@ -47,6 +47,12 @@
   <script>
     const loading = document.getElementById('loading');
     document.getElementById('game').addEventListener('load', () => loading.classList.add('hide'));
+
+    window.addEventListener('message', (event) => {
+      if (event.data && event.data.type === 'GATUNORI_CLOSE_APP') {
+        window.close();
+      }
+    });
     if ('serviceWorker' in navigator) {
       window.addEventListener('load', () => navigator.serviceWorker.register('./sw.js').catch(() => {}));
     }
